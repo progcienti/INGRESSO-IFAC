@@ -1,0 +1,743 @@
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ingresso IFAC - Ensino Médio Técnico</title>
+        <style>
+            body {
+                font-family: 'Arial', sans-serif;
+                margin: 0;
+                padding: 0;
+                background: #f4f4f4;
+                color: #333;            
+            }
+
+            /* Banner principal */
+            header {
+                background: linear-gradient(135deg, #9cd3b2, #3dbb91);
+                color: white;
+                text-align: center;
+                padding: 50px 20px;
+            }
+
+            header img {
+                width: 120px;
+                margin-bottom: 20px;
+            }
+
+            header h1 {
+                font-size: 2rem;
+                margin: 10px 0;
+            }
+
+            header p {
+                font-size: 1.2rem;
+            }
+
+            main {
+                max-width: 1000px;
+                margin: -30px auto 50px;
+                padding: 20px;
+                background: white;
+                border-radius: 15px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            }
+
+            section {
+                margin-bottom: 40px;
+            }
+
+            h2 {
+                color: #006644;
+                border-bottom: 2px solid #00a651;
+                padding-bottom: 5px;
+                margin-bottom: 20px;
+            }
+
+            p {
+                line-height: 1.6;
+            }
+
+            a.button {
+                display: inline-block;
+                padding: 12px 25px;
+                background: #00a651;
+                color: white;
+                text-decoration: none;
+                border-radius: 8px;
+                font-weight: bold;
+                transition: 0.3s;
+            }
+
+            a.button:hover {
+                background: #006644;
+            }
+
+            /* Seção inscrição */
+            .inscricao {
+                text-align: center;
+                background: #e6f7ec;
+                padding: 30px;
+                border-radius: 15px;
+                margin-bottom: 40px;
+            }
+
+            .inscricao p {
+                font-size: 1.1rem;
+                margin-bottom: 15px;
+            }
+
+            /* Calculadora */
+            form {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+
+            fieldset {
+                border: 2px solid #00a651;
+                border-radius: 10px;
+                padding: 15px;
+            }
+
+            legend {
+                font-weight: bold;
+                color: #006644;
+                padding: 0 10px;
+            }
+
+            label {
+                display: block;
+                font-weight: bold;
+                margin-bottom: 5px;
+            }
+
+            input {
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                width: 100%;
+            }
+
+            button {
+                grid-column: 1 / -1;
+                padding: 12px;
+                background: #006644;
+                color: #fff;
+                border: none;
+                border-radius: 6px;
+                font-size: 1rem;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+
+            button:hover {
+                background: #00a651;
+            }
+
+            .resultado {
+                margin-top: 20px;
+                font-size: 1.2rem;
+                font-weight: bold;
+                color: #007a33;
+                white-space: pre-line;
+            }
+
+            /* Vídeo */
+            .video-section {
+                text-align: center;
+                margin-top: 50px;
+            }
+
+            .video-section h2 {
+                color: #006644;
+                margin-bottom: 20px;
+            }
+
+            iframe {
+                width: 100%;
+                max-width: 700px;
+                height: 400px;
+                border-radius: 15px;
+            }
+
+            /* Cards dos campi */
+            .campus-section {
+                margin-top: 60px;
+            }
+
+            .campus-cards {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 25px;
+            }
+
+            .card {
+                background: #fff;
+                border: 2px solid #00a651;
+                border-radius: 12px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+                overflow: hidden;
+                transition: 0.3s;
+            }
+
+            .card:hover {
+                transform: translateY(-5px);
+            }
+
+            .card img {
+                width: 100%;
+                height: 160px;
+                object-fit: cover;
+            }
+
+            .card-content {
+                padding: 15px;
+                text-align: center;
+            }
+
+            .card-content h3 {
+                color: #006644;
+                margin: 10px 0;
+            }
+
+            .card-content a {
+                background: #00a651;
+                color: white;
+                padding: 8px 15px;
+                border-radius: 8px;
+                text-decoration: none;
+                display: inline-block;
+                margin-top: 10px;
+                font-weight: bold;
+            }
+
+            .card-content a:hover {
+                background: #006644;
+            }
+            /* Seção sobre o IFAC */
+    .sobre-ifac {
+        background: linear-gradient(135deg, #e6f7ec, #c8f2da);
+        padding: 40px 30px;
+        border-radius: 15px;
+        margin: 40px 0;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .sobre-ifac h2 {
+        text-align: center;
+        color: #006644;
+        margin-bottom: 20px;
+        font-size: 1.8rem;
+    }
+
+    .sobre-ifac p {
+        text-align: justify;
+        line-height: 1.6;
+        margin-bottom: 15px;
+    }
+
+    .sobre-ifac ul {
+        list-style: none;
+        padding-left: 0;
+        margin-top: 10px;
+    }
+
+    .sobre-ifac li {
+        background: #00a651;
+        color: white;
+        margin: 8px 0;
+        padding: 10px 15px;
+        border-radius: 8px;
+        transition: 0.3s;
+    }
+
+    .sobre-ifac li:hover {
+        background: #008542;
+        transform: translateX(5px);
+    }
+
+    /* Dúvidas Frequentes */
+    .faq-section {
+        background: linear-gradient(135deg, #e6f7ec, #d2f4e0);
+        padding: 50px 30px;
+        border-radius: 15px;
+        margin-top: 60px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .faq-section h2 {
+        text-align: center;
+        color: #006644;
+        margin-bottom: 15px;
+        font-size: 1.8rem;
+    }
+
+    .faq-section p {
+        text-align: center;
+        color: #333;
+        margin-bottom: 30px;
+    }
+
+    .faq-item {
+        margin-bottom: 15px;
+        border: 1px solid #00a651;
+        border-radius: 10px;
+        overflow: hidden;
+        background: #fff;
+        transition: 0.3s;
+    }
+
+    .faq-question {
+        width: 100%;
+        background: #00a651;
+        color: white;
+        text-align: left;
+        padding: 15px;
+        font-size: 1.1rem;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .faq-question:hover {
+        background: #006644;
+    }
+
+    .faq-answer {
+        display: none;
+        padding: 15px;
+        background: #f9fff9;
+        border-top: 1px solid #00a651;
+        color: #333;
+        line-height: 1.5;
+    }
+
+    .faq-answer.show {
+        display: block;
+        animation: fadeIn 0.3s ease-in;
+    }
+
+    /* Efeito de fade */
+    .fade {
+    animation-name: fade;
+    animation-duration: 1.2s;
+    }
+
+    /* ====== Seção de Programas e Oportunidades ====== */
+.programas-ifac {
+  background: linear-gradient(135deg, #e6f7ec, #c8f2da);
+  padding: 50px 30px;
+  border-radius: 15px;
+  margin: 60px 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.programas-ifac h2 {
+  color: #006644;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.programas-ifac .intro-programas {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.programas-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.programa-card {
+  background: #fff;
+  border: 2px solid #00a651;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 12px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.programa-card:hover {
+  transform: translateY(-6px);
+}
+
+.programa-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.programa-card h3 {
+  color: #006644;
+  margin: 15px 10px 10px;
+  font-size: 1.2rem;
+}
+
+.programa-card p {
+  color: #333;
+  font-size: 0.95rem;
+  padding: 0 15px 20px;
+  line-height: 1.5;
+}
+
+
+
+    @keyframes fade {
+    from {opacity: 0.4} 
+    to {opacity: 1}
+    }
+
+
+
+    @keyframes fade {
+    from {opacity: 0.4} 
+    to {opacity: 1}
+    }
+
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-5px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+
+
+
+            footer {
+                background: #006644;
+                color: white;
+                text-align: center;
+                padding: 15px;
+                margin-top: 60px;
+            }
+
+            @media(max-width: 600px) {
+                form {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <img src="assets/logo_ifac-removebg-preview.png" alt="Logo IFAC">
+            <h1>Processo de Ingresso - Ensino Médio Técnico</h1>
+            <p>Instituto Federal do Acre - Campus Sena Madureira</p>
+        </header>
+
+        <main>
+
+        <section class="sobre-ifac">
+        <h2>🌿 O que é o IFAC?</h2>
+        <p>
+            O <strong>Instituto Federal do Acre (IFAC)</strong> é uma instituição pública de ensino que faz parte da Rede Federal de Educação Profissional, Científica e Tecnológica. 
+            Sua missão é oferecer uma <strong>educação gratuita, de qualidade e voltada para o desenvolvimento sustentável do Acre e da Amazônia</strong>.
+        </p>
+        <p>
+            O IFAC oferece cursos <strong>técnicos integrados ao ensino médio</strong>, além de cursos superiores, de pós-graduação e de formação inicial e continuada. 
+            Ele prepara os estudantes para o mercado de trabalho e para a vida acadêmica, 
+            incentivando o <strong>pensamento crítico, a pesquisa, a inovação e o compromisso social</strong>.
+        </p>
+        <p>
+            Ao ingressar no IFAC, o estudante tem acesso a:
+        </p>
+        <ul>
+            <li>Laboratórios modernos e equipados;</li>
+            <li>Projetos de pesquisa, extensão e iniciação científica;</li>
+            <li>Ambientes de inovação e empreendedorismo;</li>
+            <li>Programas de assistência estudantil e bolsas;</li>
+            <li>Eventos culturais, esportivos e científicos;</li>
+            <li>Formação cidadã e humana para transformar o mundo.</li>
+        </ul>
+
+    </section>
+    <!------>
+    <!-- ====== Oportunidades e Programas do IFAC ====== -->
+<section class="programas-ifac">
+  <h2>🌟 Oportunidades e Programas do IFAC</h2>
+  <p class="intro-programas">
+    No IFAC, os estudantes têm acesso a diversas oportunidades que estimulam o aprendizado, a criatividade e o desenvolvimento de habilidades científicas, tecnológicas e esportivas. 
+    Confira algumas delas:
+  </p>
+
+  <div class="programas-cards">
+
+    <div class="programa-card">
+      <img src="assets/obr.png" alt="Olimpíada Brasileira de Robótica">
+      <h3>OBR - Olimpíada Brasileira de Robótica</h3>
+      <p>Incentiva o raciocínio lógico e a inovação tecnológica por meio da robótica educacional. Os times do IFAC se destacam em várias edições!</p>
+    </div>
+
+    <div class="programa-card">
+      <img src="assets/obi ifac.jpeg" alt="Olimpíada Brasileira de Informática">
+      <h3>OBI - Olimpíada Brasileira de Informática</h3>
+      <p>Voltada aos estudantes apaixonados por programação e lógica, a OBI promove desafios e o desenvolvimento do pensamento computacional.</p>
+    </div>
+
+    <div class="programa-card">
+      <img src="assets/jifac.jpeg" alt="Jogos do IFAC">
+      <h3>JIFAC - Jogos dos Institutos Federais</h3>
+      <p>Os JIFAC promovem o esporte, o trabalho em equipe e o espírito estudantil, reunindo alunos de todos os campi em competições saudáveis e motivadoras.</p>
+    </div>
+
+    <div class="programa-card">
+      <img src="assets/aula pratica.png" alt="Aulas práticas e laboratoriais">
+      <h3>Aulas Práticas e Laboratórios</h3>
+      <p>O IFAC oferece aulas práticas em laboratórios modernos, aproximando o estudante da realidade profissional e fortalecendo a aprendizagem técnica.</p>
+    </div>
+
+        <div class="programa-card">
+      <img src="assets/ifac adota realidade virutal.jpeg" alt="Aulas práticas e laboratoriais">
+      <h3>Realidade Virtual</h3>
+      <p>Ifac adota Realidade Virtual e transforma o ensino de Física no campus Rio Branco</p>
+    </div>
+
+     <div class="programa-card">
+      <img src="assets/olimpaida brasileira de geografia.png" alt="Aulas práticas e laboratoriais">
+      <h3>OBG - Olimpiada Brasileira de Geografia</h3>
+      <p>Campus Cruzeiro do Sul conquista 19 medalhas na Olimpíada de Geografia</p>
+    </div>
+
+    <div class="programa-card">
+      <img src="assets/olipada brasileira de quimica.png" alt="Aulas práticas e laboratoriais">
+      <h3>OBQ - Olimpiada Brasileira de Química</h3>
+      <p>Ifac Campus Sena Madureira é referência no Acre nas Olimpíadas de Química</p>
+    </div>
+
+     <div class="programa-card">
+      <img src="assets/jut tsiu.jpeg" alt="Aulas práticas e laboratoriais">
+      <h3>Jiu jitsu</h3>
+      <p>Primeira edição da Copa TK Ifac de Jiu Jitsu é realizada no campus Tarauacá</p>
+    </div>
+
+         <div class="programa-card">
+      <img src="assets/viagem tecnica.jpeg" alt="Aulas práticas e laboratoriais">
+      <h3>Viagem tecnica</h3>
+      <p>O IFAC oferece viagens tecnicas com otima infrestrutura</p>
+    </div>
+
+
+     <div class="programa-card">
+      <img src="assets/lab maker.jpeg" alt="Aulas práticas e laboratoriais">
+      <h3>Laboratorio Maker</h3>
+      <p>Laboratório IFMaker amplia oportunidades de inovação</p>
+    </div>
+
+
+         <div class="programa-card">
+      <img src="assets/oab ifac 2.avif" alt="Aulas práticas e laboratoriais">
+      <h3>Olimpíada Brasileira de Foguetes</h3>
+      <p>Ifac conquista ouro na etapa nacional da Olimpíada de Foguetes no Rio de Janeiro</p>
+    </div>
+
+    <div class="programa-card">
+      <img src="assets/celebração do ifac 15 anos.png" alt="Aulas práticas e laboratoriais">
+      <h3>15 anos IFAC</h3>
+      <p>Ifac celebra 15 anos com servidores reunidos</p>
+    </div>
+
+
+  </div>
+</section>
+
+
+            <section>
+                <h2>Baixar Edital</h2>
+                <a href="assets/20250919194647.pdf" class="button" download>Download do Edital</a> 
+                <a href="https://editais.ifac.edu.br/quero-estudar-no-ifac/edital/1048/arquivos" class="button">PROCESSO SELETIVO</a>
+            </section>
+
+            <section class="inscricao">
+                <h2>📋 Informações sobre as Inscrições</h2>
+                <p>As inscrições para o ingresso nos cursos técnicos integrados ao ensino médio do IFAC estão abertas!</p>
+                <p>Período de inscrição: <strong>22 de setembro a 31 de novembro</strong></p>
+                <p>As inscrições são totalmente gratuitas e realizadas online.</p>
+                <a href="https://selecoes.ifac.edu.br" class="button">Ir para Página de Inscrição</a>
+            </section>
+
+            <section>
+                <h2>Calculadora de Média</h2>
+                <form id="mediaForm">
+                    <fieldset>
+                        <legend>Português</legend>
+                        <label for="port6">6º ano:</label>
+                        <input type="number" id="port6" min="0" max="100" required>
+                        <label for="port7">7º ano:</label>
+                        <input type="number" id="port7" min="0" max="100" required>
+                        <label for="port8">8º ano:</label>
+                        <input type="number" id="port8" min="0" max="100" required>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Matemática</legend>
+                        <label for="mat6">6º ano:</label>
+                        <input type="number" id="mat6" min="0" max="100" required>
+                        <label for="mat7">7º ano:</label>
+                        <input type="number" id="mat7" min="0" max="100" required>
+                        <label for="mat8">8º ano:</label>
+                        <input type="number" id="mat8" min="0" max="100" required>
+                    </fieldset>
+
+                    <button type="button" onclick="calcularMedia()">Calcular Média</button>
+                </form>
+                <div class="resultado" id="resultado"></div>
+            </section>
+
+            <section class="video-section">
+                <h2>🎬 Vídeo Institucional do IFAC</h2>
+                <iframe src="https://www.youtube.com/embed/3zed076LFf4?si=RwNC659q_rkoiO3i" title="Vídeo Institucional IFAC" allowfullscreen></iframe>
+            </section>
+
+            <section class="campus-section">
+                <h2>Conheça os Campi do IFAC</h2>
+                <div class="campus-cards">
+                    <div class="card">
+                        <img src="assets/campus rio rbanco.jpg" alt="Campus Rio Branco">
+                        <div class="card-content">
+                            <h3>Campus Rio Branco</h3>
+                            <a href="/campi/rio-Branco.html">Ver mais</a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <img src="assets/IFAC_SENA.jpeg" alt="Campus Sena Madureira">
+                        <div class="card-content">
+                            <h3>Campus Sena Madureira</h3>
+                            <a href="campi/sena-madureira.html">Ver mais</a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <img src="assets/campus cruzeiro do sul.jpg" alt="Campus Cruzeiro do Sul">
+                        <div class="card-content">
+                            <h3>Campus Cruzeiro do Sul</h3>
+                            <a href="campi/cruzeiro-do-sul.html">Ver mais</a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <img src="assets/ifac campus xapuri.jpeg" alt="Campus Xapuri">
+                        <div class="card-content">
+                            <h3>Campus Xapuri</h3>
+                            <a href="/campi/xapuri.html">Ver mais</a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <img src="assets/ifac campus tarauaca.jpeg" alt="Campus Tarauacá">
+                        <div class="card-content">
+                            <h3>Campus Tarauacá</h3>
+                            <a href="/campi/tarauaca.html">Ver mais</a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <img src="assets/ifac campus baixado do sol.jpeg" alt="Campus Baixada do Sol">
+                        <div class="card-content">
+                            <h3>Campus Baixada do Sol</h3>
+                            <a href="/campi/baixada-do-sol.html">Ver mais</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="faq-section">
+        <h2>❓ Dúvidas Frequentes</h2>
+        <p>Confira as principais perguntas sobre o processo seletivo do IFAC:</p>
+
+            <div class="faq-item">
+            <button class="faq-question">O que é o curso técnico integrado?</button>
+            <div class="faq-answer">
+                <p>E o </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">Quem pode se inscrever no processo seletivo do IFAC?</button>
+            <div class="faq-answer">
+                <p>Podem se inscrever estudantes que concluíram ou estão concluindo o ensino fundamental e desejam cursar o ensino médio integrado com um curso técnico em um dos campi do IFAC.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">A inscrição é gratuita?</button>
+            <div class="faq-answer">
+                <p>Sim! Todas as inscrições para os cursos técnicos integrados do IFAC são 100% gratuitas e realizadas online no portal oficial de seleções.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">Como é feita a seleção dos candidatos?</button>
+            <div class="faq-answer">
+                <p>A seleção é realizada com base nas notas de Português e Matemática do 6º, 7º e 8º anos do ensino fundamental. Você pode usar nossa calculadora de média para ter uma ideia da sua pontuação.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">Posso me inscrever em mais de um campus?</button>
+            <div class="faq-answer">
+                <p>Não. O candidato deve escolher apenas um campus e um curso técnico por inscrição, portanto, escolha com atenção o curso que mais se encaixa nos seus objetivos.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">O IFAC oferece alojamento ou auxílio estudantil?</button>
+            <div class="faq-answer">
+                <p>Sim. O IFAC conta com programas de assistência estudantil, como auxílio transporte, alimentação e moradia, conforme o edital vigente. Esses auxílios ajudam o estudante a permanecer e concluir seus estudos com qualidade.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">Quais cursos técnicos o IFAC oferece?</button>
+            <div class="faq-answer">
+                <p>Os cursos variam de acordo com o campus. Entre as opções estão: Informática, Agroecologia, Administração, Florestas, Edificações, Meio Ambiente, entre outros. Você pode conhecer mais na seção “Campi do IFAC”.</p>
+            </div>
+        </div>
+    </section>
+
+        </main>
+
+
+        <footer>
+            © 2025 Instituto Federal do Acre (IFAC) — Todos os direitos reservados.
+        </footer>
+
+        <script>
+            function calcularMedia() {
+                const port6 = parseFloat(document.getElementById('port6').value);
+                const port7 = parseFloat(document.getElementById('port7').value);
+                const port8 = parseFloat(document.getElementById('port8').value);
+                const mat6 = parseFloat(document.getElementById('mat6').value);
+                const mat7 = parseFloat(document.getElementById('mat7').value);
+                const mat8 = parseFloat(document.getElementById('mat8').value);
+
+                const mediaPort = (port6 + port7 + port8) / 3;
+                const mediaMat = (mat6 + mat7 + mat8) / 3;
+                const mediaFinal = (mediaPort + mediaMat) / 2;
+
+                document.getElementById('resultado').innerText =
+                    `Média de Português: ${mediaPort.toFixed(2)}\n` +
+                    `Média de Matemática: ${mediaMat.toFixed(2)}\n` +
+                    `Média Final: ${mediaFinal.toFixed(2)}`;
+            }
+                // Script para abrir e fechar dúvidas
+        const questions = document.querySelectorAll('.faq-question');
+        questions.forEach(q => {
+            q.addEventListener('click', () => {
+                const answer = q.nextElementSibling;
+                answer.classList.toggle('show');
+            });
+        });
+        
+
+        </script>
+
+    </body>
+    </html>
