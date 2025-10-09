@@ -1,0 +1,29 @@
+/* ====== ALTO CONTRASTE ====== */
+body.alto-contraste {
+    background-color: #000000 !important;
+    color: #e20880 !important;
+}
+
+body.alto-contraste header,
+body.alto-contraste main,
+body.alto-contraste footer {                                                                            
+    background-color: #000000 !important;
+    color: #121110 !important;
+    border-color: #185de7 !important;
+}
+
+body.alto-contraste a,
+body.alto-contraste button {
+    background-color: #cc11cf !important;
+    color: #000 !important;
+    border-color: #fa0404 !important;
+}
+
+/* ====== FONTES ====== */
+body.font-grande {
+    font-size: 1.2em;
+}
+
+body.font-pequena {
+    font-size: 0.9em;
+}
